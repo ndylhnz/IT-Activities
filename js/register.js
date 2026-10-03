@@ -61,12 +61,9 @@ $(function () {
         errorElement: "span",
         errorClass: "form-error",
 
-        // Real-time validation: minimum/maximum, email format, and password
-        // matching update as the user types.
         onkeyup: function (element) {
             this.element(element);
 
-            // When the password changes, immediately re-check confirmation.
             if (element.name === "password") {
                 const confirmation = $("#confirm-password")[0];
                 if (confirmation && $(confirmation).val() !== "") {
