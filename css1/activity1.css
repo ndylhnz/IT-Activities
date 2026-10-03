@@ -1,0 +1,286 @@
+/* IT314 ACTIVITY 1 — responsive full-background login/register */
+
+:root {
+    --white: #fff;
+    --muted-white: rgba(255,255,255,.68);
+    --glass: rgba(3,11,28,.16);
+    --glass-border: rgba(255,255,255,.28);
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--white);
+    background: #07132d;
+}
+
+button, input { font: inherit; }
+a { color: inherit; }
+
+/* Full-page background, matching the professor's example style. */
+.auth-shell {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 22px;
+    background-image:
+        linear-gradient(90deg, rgba(4,10,25,.34), rgba(4,10,25,.10) 55%, rgba(4,10,25,.30)),
+        linear-gradient(180deg, rgba(2,8,24,.14), rgba(2,8,24,.30)),
+        url("../assets1/shorekeeper.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.auth-shell::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at center, transparent 15%, rgba(1,7,22,.16) 100%);
+}
+
+/* No separate white desktop panel. */
+.auth-visual { display: none; }
+
+.auth-panel {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Transparent/glass form instead of a white card. */
+.auth-card {
+    width: min(100%, 360px);
+    padding: 24px 26px 22px;
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    background: var(--glass);
+    box-shadow: 0 12px 40px rgba(0,0,0,.28);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.register-card { width: min(100%, 390px); }
+
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.brand-mark {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255,255,255,.55);
+    border-radius: 50%;
+    background: rgba(255,255,255,.10);
+    font-family: Georgia, serif;
+    font-weight: 700;
+}
+
+.brand strong, .brand span { display: block; }
+.brand strong { font-size: .82rem; letter-spacing: .08em; }
+.brand span { margin-top: 1px; color: var(--muted-white); font-size: .62rem; }
+
+.form-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-header .eyebrow { display: none; }
+
+.form-header h2 {
+    margin: 0 0 7px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 4vw, 2.35rem);
+    font-weight: 600;
+    letter-spacing: -.025em;
+    text-shadow: 0 2px 12px rgba(0,0,0,.35);
+}
+
+.form-header > p:last-child {
+    margin: 0;
+    color: var(--muted-white);
+    font-size: .78rem;
+    line-height: 1.45;
+}
+
+.form-group { margin-bottom: 13px; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: rgba(255,255,255,.82);
+    font-size: .70rem;
+    font-weight: 600;
+}
+
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    min-height: 38px;
+    border: 1px solid rgba(255,255,255,.48);
+    border-radius: 999px;
+    padding: 0 14px;
+    outline: none;
+    color: white;
+    background: rgba(255,255,255,.08);
+    box-shadow: inset 0 1px 8px rgba(0,0,0,.10);
+    transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+input::placeholder { color: rgba(255,255,255,.57); }
+
+input:focus {
+    border-color: rgba(255,255,255,.95);
+    background: rgba(255,255,255,.13);
+    box-shadow: 0 0 0 3px rgba(255,255,255,.13);
+}
+
+.check-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin: 1px 0 15px;
+    color: rgba(255,255,255,.72);
+    font-size: .68rem;
+    cursor: pointer;
+}
+
+.check-row input { accent-color: white; }
+
+.primary-button {
+    width: 100%;
+    min-height: 38px;
+    border: 1px solid rgba(255,255,255,.75);
+    border-radius: 999px;
+    color: #17223a;
+    background: rgba(255,255,255,.90);
+    font-size: .73rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 7px 18px rgba(0,0,0,.18);
+    transition: transform 160ms ease, background 160ms ease;
+}
+
+.primary-button:hover { transform: translateY(-1px); background: white; }
+.primary-button:active { transform: translateY(0); }
+
+.switch-text {
+    margin: 14px 0 0;
+    text-align: center;
+    color: rgba(255,255,255,.70);
+    font-size: .67rem;
+}
+
+.switch-text a {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.switch-text a:hover { text-decoration: underline; }
+
+/* Desktop: the form stays centered over the full background. */
+@media (min-width: 901px) {
+    .auth-card,
+    .register-card {
+        transform: none;
+        margin-inline: auto;
+    }
+}
+
+/* Tablet/mobile: same HTML, still centered, but smaller. */
+@media (max-width: 900px) {
+    .auth-shell {
+        padding: 24px 18px;
+        background-position: center center;
+    }
+
+    .auth-card, .register-card {
+        width: min(100%, 380px);
+        transform: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .auth-shell {
+        padding: 18px 14px;
+        background-position: 54% center;
+    }
+
+    .auth-card, .register-card {
+        width: min(100%, 340px);
+        padding: 20px 19px 18px;
+        border-color: rgba(255,255,255,.22);
+        background: rgba(3,11,28,.12);
+    }
+
+    .brand { margin-bottom: 18px; }
+    .form-header { margin-bottom: 17px; }
+    .form-header h2 { font-size: 1.8rem; }
+    .form-group { margin-bottom: 11px; }
+
+    input[type="email"],
+    input[type="text"],
+    input[type="password"] {
+        min-height: 36px;
+    }
+
+    .primary-button { min-height: 37px; }
+}
+
+/* jQuery Validation feedback */
+.form-error {
+    display: block;
+    margin-top: 5px;
+    color: #ffd0d0;
+    font-size: .68rem;
+    font-weight: 600;
+    text-shadow: 0 1px 4px rgba(0,0,0,.35);
+}
+
+input.error {
+    border-color: rgba(255, 150, 150, .95);
+    box-shadow: 0 0 0 3px rgba(255, 100, 100, .12);
+}
+
+input.valid {
+    border-color: rgba(170, 255, 220, .78);
+}
+
+.status-message {
+    display: none;
+    margin: 9px 0 12px;
+    line-height: 1.45;
+}
+
+.success-message {
+    display: block;
+    color: #d9ffe9;
+    font-size: .68rem;
+    font-weight: 600;
+    text-shadow: 0 1px 4px rgba(0,0,0,.35);
+}
+
+@media (max-width: 560px) {
+    .status-message { font-size: .65rem; }
+}

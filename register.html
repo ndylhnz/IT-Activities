@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wuthering Waves registration page with jQuery Validation">
+    <title>Register | Wuthering Waves</title>
+    <link rel="stylesheet" href="css1/activity1.css">
+</head>
+<body class="auth-page register-page">
+    <main class="auth-shell">
+        <section class="auth-visual" aria-label="Welcome panel">
+            <div class="visual-overlay"></div>
+            <div class="visual-copy">
+                <p class="eyebrow">CREATE YOUR ACCOUNT</p>
+                <h1>Start something new.</h1>
+                <p>Register your account and join the IT314 student portal.</p>
+            </div>
+        </section>
+
+        <section class="auth-panel">
+            <div class="auth-card register-card">
+                <div class="brand">
+                    <div class="brand-mark" aria-hidden="true">I</div>
+                    <div>
+                        <strong>IT314</strong>
+                        <span>Student Portal</span>
+                    </div>
+                </div>
+
+                <header class="form-header">
+                    <p class="eyebrow">NEW ACCOUNT</p>
+                    <h2>Create account</h2>
+                    <p>Fill in the information below to get started.</p>
+                </header>
+
+                <form id="registerForm" novalidate>
+                    <div class="form-group">
+                        <label for="register-name">Full name</label>
+                        <input
+                            type="text"
+                            id="register-name"
+                            name="full_name"
+                            maxlength="80"
+                            placeholder="Juan Dela Cruz"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-email">Email address</label>
+                        <input
+                            type="email"
+                            id="register-email"
+                            name="email"
+                            maxlength="254"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-username">Username</label>
+                        <input
+                            type="text"
+                            id="register-username"
+                            name="username"
+                            minlength="3"
+                            maxlength="20"
+                            placeholder="Choose a username"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <input
+                            type="password"
+                            id="register-password"
+                            name="password"
+                            minlength="5"
+                            maxlength="32"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm password</label>
+                        <input
+                            type="password"
+                            id="confirm-password"
+                            name="confirm_password"
+                            minlength="5"
+                            maxlength="32"
+                            placeholder="Repeat your password"
+                            autocomplete="new-password"
+                            required
+                        >
+                    </div>
+
+                    <div id="registerStatus" class="status-message" role="status" aria-live="polite"></div>
+
+                    <button type="submit" class="primary-button">Register</button>
+                </form>
+
+                <p class="switch-text">
+                    Already have an account?
+                    <a href="index.html">Login here</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

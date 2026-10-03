@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wuthering Waves login page with jQuery Validation">
+    <title>Login | Wuthering Waves</title>
+    <link rel="stylesheet" href="css1/activity1.css">
+</head>
+<body class="auth-page login-page">
+    <main class="auth-shell">
+        <section class="auth-visual" aria-label="Welcome panel">
+            <div class="visual-overlay"></div>
+            <div class="visual-copy">
+                <p class="eyebrow">WELCOME BACK</p>
+                <h1>Continue your journey.</h1>
+                <p>Sign in to access your account and continue where you left off.</p>
+            </div>
+        </section>
+
+        <section class="auth-panel">
+            <div class="auth-card">
+                <div class="brand">
+                    <div class="brand-mark" aria-hidden="true">I</div>
+                    <div>
+                        <strong>IT314</strong>
+                        <span>Student Portal</span>
+                    </div>
+                </div>
+
+                <header class="form-header">
+                    <p class="eyebrow">ACCOUNT ACCESS</p>
+                    <h2>Welcome back</h2>
+                    <p>Enter your details below to sign in.</p>
+                </header>
+
+                <form id="loginForm" novalidate>
+                    <div class="form-group">
+                        <label for="login-username">Username</label>
+                        <input
+                            type="text"
+                            id="login-username"
+                            name="username"
+                            minlength="3"
+                            maxlength="20"
+                            required
+                            placeholder="Enter your username"
+                            autocomplete="username"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input
+                            type="password"
+                            id="login-password"
+                            name="password"
+                            minlength="5"
+                            maxlength="32"
+                            required
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                        >
+                    </div>
+
+                    <div id="loginStatus" class="status-message" role="alert" aria-live="polite"></div>
+
+                    <label class="check-row">
+                        <input type="checkbox" name="remember">
+                        <span>Remember me</span>
+                    </label>
+
+                    <button type="submit" class="primary-button">Login</button>
+                </form>
+
+                <p class="switch-text">
+                    Don't have an account?
+                    <a href="register.html">Create an account</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

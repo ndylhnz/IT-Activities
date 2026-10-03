@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="A responsive Wuthering Waves landing page built with HTML, CSS and Bootstrap 5.">
+
+    <title>Wuthering Waves | A Solaris-3 Journey</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css2/activity2.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Main navigation">
+            <div class="container">
+                <a class="navbar-brand" href="#home" aria-label="Wuthering Waves home">
+                    <span class="brand-mark" aria-hidden="true">W</span>
+                    <span class="brand-name">WUTHERING WAVES</span>
+                </a>
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNavigation"
+                    aria-controls="mainNavigation"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#features">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="logoutLink" href="index.html">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-light nav-button" href="#about">Discover</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO / HOME -->
+        <section id="home" class="hero-section">
+            <div class="hero-overlay" aria-hidden="true"></div>
+
+            <div class="container hero-container">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-7 hero-copy">
+                        <p id="welcomeMessage" class="welcome-message" role="status" aria-live="polite">Welcome!</p>
+                        <p class="eyebrow">A JOURNEY ACROSS SOLARIS-3</p>
+
+                        <h1>Wuthering Waves</h1>
+
+                        <p class="hero-description">
+                            is a story-rich, open-world action RPG set on the post-apocalyptic
+                            planet Solaris-3, where a catastrophic event known as the Lament has
+                            fractured reality and unleashed monstrous, sound-based entities upon humanity.
+                            Players step into the shoes of Rover, a legendary amnesiac who awakens to a
+                            strange new world and possesses the unique ability to absorb and manipulate
+                            the frequencies of defeated enemies. Together with powerful companions called
+                            Resonators, players explore a vast sci-fi landscape, utilizing fluid wall-running
+                            parkour and engaging in lightning-fast, high-skill combat where capturing and
+                            transforming into monster "Echoes" is the key to reclaiming the future.
+                        </p>
+
+                        <div class="hero-actions">
+                            <a href="#about" class="btn btn-light btn-lg px-4">Explore the world</a>
+                            <a href="#features" class="hero-link">View features <span aria-hidden="true">↓</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Responsive element:
+                         Desktop/tablet: character artwork sits beside the text.
+                         Mobile: artwork moves below the text. -->
+                    <div class="col-lg-5 hero-character-column">
+                        <img
+                            src="assets2/aemeath.png"
+                            class="hero-character"
+                            alt="Aemeath character artwork from Wuthering Waves"
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <a class="scroll-indicator" href="#about" aria-label="Scroll to About section">
+                <span>SCROLL</span>
+                <span aria-hidden="true">↓</span>
+            </a>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <p class="eyebrow dark-eyebrow">THE WORLD OF WUTHERING WAVES</p>
+                        <h2>A fractured world waiting to be explored.</h2>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="about-panel">
+                            <p>
+                                Awaken as Rover and travel through Solaris-3, a world reshaped by
+                                the Lament. Meet Resonators, uncover lost memories, and discover
+                                the stories hidden throughout a vast open-world landscape.
+                            </p>
+                            <a href="#features" class="btn btn-outline-light">Discover more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <div class="text-center section-heading">
+                    <p class="eyebrow dark-eyebrow">WHAT AWAITS YOU</p>
+                    <h2>Explore. Fight. Echo.</h2>
+                    <p>
+                        Three elements that define the adventure across Solaris-3.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <article class="feature-card h-100">
+                            <span class="feature-number">01</span>
+                            <h3>Open-World Exploration</h3>
+                            <p>
+                                Traverse a vast sci-fi landscape with fluid movement,
+                                wall-running parkour and freedom to explore Solaris-3.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="col-md-4">
+                        <article class="feature-card h-100">
+                            <span class="feature-number">02</span>
+                            <h3>Fast-Paced Combat</h3>
+                            <p>
+                                Engage enemies through quick, high-skill combat built around
+                                movement, timing and powerful Resonator abilities.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="col-md-4">
+                        <article class="feature-card h-100">
+                            <span class="feature-number">03</span>
+                            <h3>Echoes</h3>
+                            <p>
+                                Absorb defeated enemies and transform into their Echoes,
+                                turning their frequencies into new powers for battle.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
+            <p class="mb-0">Wuthering Waves — IT314 Activity 2</p>
+            <a href="#home">Back to top ↑</a>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js"></script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+    ></script>
+    <script src="js/homepage.js"></script>
+</body>
+</html>
